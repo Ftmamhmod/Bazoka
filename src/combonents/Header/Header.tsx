@@ -4,7 +4,10 @@ import logo from "./../../assets/images/logo.png";
 import hotline from "./../../assets/images/hotline.png";
 import global from "./../../assets/images/coronavirus1.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="w-full bg-background border-b border-border">
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -13,10 +16,39 @@ const Header = () => {
           onClick={() => (window.location.href = "/")}
           className="flex items-center space-x-2 cursor-pointer"
         >
-          <img className="logo  " src={logo} alt="Bazooka Logo" />
+          <img className="logo" src={logo} alt="Bazooka Logo" />
         </div>
 
-        {/* Navigation */}
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 z-10"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        {/* Navigation - Desktop */}
         <nav className="hidden md:flex items-center space-x-6">
           <Button variant="ghost" className="text-primary">
             <Link to="/">Home</Link>
@@ -34,6 +66,23 @@ const Header = () => {
             <Link to="/about">About Us</Link>
           </Button>
         </nav>
+
+        {/* Navigation - Mobile */}
+        {isMenuOpen && (
+          <div className="absolute top-16 left-0 right-0 bg-background md:hidden">
+            <div className="flex flex-col p-4 space-y-2">
+              <Link to="/" className="p-2 hover:text-primary">
+                Home
+              </Link>
+              <Link to="/menu" className="p-2 hover:text-primary">
+                Menu
+              </Link>
+              <Link to="/about" className="p-2 hover:text-primary">
+                About Us
+              </Link>
+            </div>
+          </div>
+        )}
 
         {/* Right side */}
         <div className="flex items-center space-x-4">
