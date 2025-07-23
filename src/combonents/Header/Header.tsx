@@ -1,4 +1,4 @@
-import { ShoppingCart, User } from "lucide-react";
+import { User } from "lucide-react";
 import { Button } from "./../../combonents/ui/Button";
 import logo from "./../../assets/images/logo.png";
 import hotline from "./../../assets/images/hotline.png";

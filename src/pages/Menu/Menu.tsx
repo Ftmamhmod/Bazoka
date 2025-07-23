@@ -33,13 +33,13 @@ const Menu = () => {
   };
 
   return (
-    <div className="min-h-screen ">
+    <>
       {/* Search Bar */}
       <section className="py-6 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto relative">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2  w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search for explosive dishes, chicken, sandwiches..."
@@ -51,16 +51,17 @@ const Menu = () => {
               {searchTerm && (
                 <button
                   onClick={clearSearch}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-bazooka-red transition-colors duration-200"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 transition-colors duration-200"
                   aria-label="Clear search"
                 >
+                  ``
                   <X className="w-5 h-5" />
                 </button>
               )}
             </div>
             {searchTerm && (
               <div className="mt-3 text-center">
-                <span className="text-sm text-gray-600">
+                <span className="text-sm ">
                   {filteredDishes.length} dishes found for "{searchTerm}"
                 </span>
               </div>
@@ -97,7 +98,7 @@ const Menu = () => {
             <>
               {/* Results Header */}
               <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-bazooka-charcoal">
+                <h2 className="text-2xl font-bold text-yellow-primary ">
                   {searchTerm ? (
                     <>Found {filteredDishes.length} explosive dishes</>
                   ) : (
@@ -110,11 +111,9 @@ const Menu = () => {
                   )}
                 </h2>
                 {searchTerm && (
-                  <p className="text-gray-600 mt-2">
+                  <p className=" mt-2">
                     Searching for:{" "}
-                    <span className="font-semibold text-bazooka-orange">
-                      "{searchTerm}"
-                    </span>
+                    <span className="font-semibold">"{searchTerm}"</span>
                   </p>
                 )}
               </div>
@@ -130,10 +129,10 @@ const Menu = () => {
               {searchTerm ? (
                 <div>
                   <div className="text-6xl mb-4">🔍</div>
-                  <h3 className="text-2xl font-bold text-gray-700 mb-2">
+                  <h3 className="text-2xl font-bold  mb-2">
                     No explosive dishes found
                   </h3>
-                  <p className="text-xl text-gray-500 mb-6">
+                  <p className="text-xl  mb-6">
                     Try searching for "chicken", "sandwich", "spicy", or "rice"
                   </p>
                   <button
@@ -144,9 +143,7 @@ const Menu = () => {
                   </button>
                 </div>
               ) : (
-                <p className="text-xl text-gray-500">
-                  No dishes found in this category.
-                </p>
+                <p className="text-xl ">No dishes found in this category.</p>
               )}
             </div>
           )}
@@ -166,13 +163,13 @@ const Menu = () => {
             <a href="tel:16123" className="btn-primary   hover:bg-gray-100">
               Call 16123 Now
             </a>
-            <button className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-bazooka-orange">
+            <button className="btn-secondary border-2 border-white text-white hover:bg-white ">
               Order Online
             </button>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

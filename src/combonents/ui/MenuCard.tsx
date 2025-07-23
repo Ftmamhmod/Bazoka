@@ -1,6 +1,15 @@
-import { Plus, Heart, ShoppingCart, Minus, Trash2 } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
 
-const MenuCard = ({ dish }: any) => {
+interface Dish {
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+  spicyLevel?: string;
+}
+
+const MenuCard = ({ dish }: { dish: Dish }) => {
   const { name, description, price, image, category, spicyLevel } = dish;
 
   return (
@@ -35,7 +44,7 @@ const MenuCard = ({ dish }: any) => {
           </span>
         </div>
 
-        <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed line-clamp-2">
+        <p className=" mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed line-clamp-2">
           {description}
         </p>
 
@@ -44,7 +53,6 @@ const MenuCard = ({ dish }: any) => {
             {category}
           </span>
           {/* Dynamic Button Area */}
-          // Add to Cart Button (when item is not in cart)
           <button
             className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm 
               `}
@@ -55,43 +63,6 @@ const MenuCard = ({ dish }: any) => {
               <span className="sm:hidden">Add</span>
             </>
           </button>
-          // Quantity Controls (when item is in cart)
-          <div className="flex items-center space-x-1 sm:space-x-2">
-            {/* Decrease/Remove Button */}
-            <button className="bg-gray-100 hover:bg-gray-200 text-bazooka-charcoal p-1.5 sm:p-2 rounded-full transition-colors duration-300">
-              <Minus size={12} className="sm:w-3.5 sm:h-3.5" />
-            </button>
-
-            {/* Quantity Display */}
-            <span className=" px-2 sm:px-3 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm min-w-[32px] sm:min-w-[40px] text-center"></span>
-
-            {/* Increase Button */}
-            <button
-              className="bg-bazooka-orange hover:bg-orange-600 text-white p-1.5 sm:p-2 rounded-full transition-colors duration-300"
-              title="Increase quantity"
-            >
-              <Plus size={12} className="sm:w-3.5 sm:h-3.5" />
-            </button>
-
-            {/* Remove All Button */}
-            <button
-              className=" hover:bg-red-700 text-white p-1.5 sm:p-2 rounded-full transition-colors duration-300 ml-1 sm:ml-2"
-              title="Remove all from cart"
-            >
-              <Trash2 size={12} className="sm:w-3.5 sm:h-3.5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Optional: Show item total when in cart */}
-
-        <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-gray-100">
-          <div className="flex justify-between items-center text-xs sm:text-sm">
-            <span className="text-gray-600">Item total:</span>
-            <span className="font-bold text-bazooka-orange">
-              ${parseFloat(price).toFixed(2)}
-            </span>
-          </div>
         </div>
       </div>
     </div>
