@@ -3,32 +3,35 @@ import { Button } from "./../../combonents/ui/Button";
 import logo from "./../../assets/images/logo.png";
 import hotline from "./../../assets/images/hotline.png";
 import global from "./../../assets/images/coronavirus1.png";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="w-full bg-background border-b border-border">
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2 ">
+        <div
+          onClick={() => (window.location.href = "/")}
+          className="flex items-center space-x-2 cursor-pointer"
+        >
           <img className="logo  " src={logo} alt="Bazooka Logo" />
         </div>
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <Button variant="ghost" className="text-primary">
-            Home
+            <Link to="/">Home</Link>
           </Button>
           <Button
             variant="ghost"
             className="text-foreground hover:text-primary"
           >
-            Menu
+            <Link to="/menu">Menu</Link>
           </Button>
           <Button
             variant="ghost"
             className="text-foreground hover:text-primary flex items-center space-x-2"
           >
-            <ShoppingCart className="w-4 h-4" />
-            <span>Cart</span>
+            <Link to="/about">About Us</Link>
           </Button>
         </nav>
 
