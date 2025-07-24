@@ -19,8 +19,10 @@ const products = [
 const title = "Best sellers";
 const ProductCarousel = () => {
   return (
-    <div className="mb-12 ">
-      <h2 className="text-2xl font-bold  mb-6 text-yellow-primary">{title}</h2>
+    <div className="justify-center items-center flex flex-col gap-4">
+      <h2 className="md:text-2xl text-sm font-bold  mb-6 text-yellow-primary">
+        {title}
+      </h2>
       <div className="relative w-full">
         <Swiper
           modules={[Navigation]}
@@ -29,26 +31,33 @@ const ProductCarousel = () => {
           centeredSlides={products.length === 1}
           breakpoints={{
             480: {
-              slidesPerView: 2,
+              slidesPerView: 1,
             },
             640: {
-              slidesPerView: 3,
+              slidesPerView: 1,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
             1280: {
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
           }}
           className="product-carousel "
         >
           {products.map((product) => (
-            <SwiperSlide className="py-2 " key={product.id}>
-              <img src={product?.images} alt={product?.title} />
+            <SwiperSlide
+              className="py-3 px-2 flex justify-center "
+              key={product.id}
+            >
+              <img
+                className=" w-50 md:w-full sm:w-50 object-cover rounded-lg shadow-lg"
+                src={product?.images}
+                alt={product?.title}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

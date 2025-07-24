@@ -7,7 +7,7 @@ const Home = () => {
       <main>
         <HeroSection />
       </main>
-      <div className="max-w-6xl mx-auto px-4 py-96">
+      <div className="max-w-6xl mx-auto px-4 py-96 m-auto">
         <ProductCarousel />
       </div>
     </div>

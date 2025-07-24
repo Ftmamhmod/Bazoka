@@ -63,7 +63,7 @@ const Header = () => {
             variant="ghost"
             className="text-foreground hover:text-primary flex items-center space-x-2"
           >
-            <Link to="/about">About Us</Link>
+            <Link to="/about">About</Link>
           </Button>
           <Button
             variant="ghost"
@@ -84,7 +84,10 @@ const Header = () => {
                 Menu
               </Link>
               <Link to="/about" className="p-2 hover:text-primary">
-                About Us
+                About
+              </Link>
+              <Link to="/contact" className="p-2 hover:text-primary">
+                Contact Us
               </Link>
             </div>
           </div>
