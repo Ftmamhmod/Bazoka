@@ -20,7 +20,7 @@ const title = "Best sellers";
 const ProductCarousel = () => {
   return (
     <div className="justify-center items-center flex flex-col gap-4">
-      <h2 className="md:text-2xl text-sm font-bold  mb-6 text-yellow-primary">
+      <h2 className="hidden md:block sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-yellow-primary text-center">
         {title}
       </h2>
       <div className="relative w-full">
@@ -46,15 +46,15 @@ const ProductCarousel = () => {
               slidesPerView: 3,
             },
           }}
-          className="product-carousel "
+          className="product-carousel"
         >
           {products.map((product) => (
             <SwiperSlide
-              className="py-3 px-2 flex justify-center "
+              className="py-3 px-2 flex justify-center"
               key={product.id}
             >
               <img
-                className=" w-50 md:w-full sm:w-50 object-cover rounded-lg shadow-lg"
+                className="w-full max-w-[250px] md:max-w-none object-cover rounded-lg shadow-lg"
                 src={product?.images}
                 alt={product?.title}
               />
