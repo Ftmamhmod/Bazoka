@@ -45,7 +45,7 @@ const Menu = () => {
                 placeholder="Search for explosive dishes, chicken, sandwiches..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-12 py-3 lg:py-4 text-sm lg:text-lg  border-2 border-gray-200 rounded-full focus:outline-none 
+                className=" w-full pl-12 pr-12 py-3 lg:py-4 text-sm lg:text-lg  border-2 border-gray-200 rounded-full focus:outline-none 
                  focus:ring-2  transition-all duration-300"
               />
               {searchTerm && (
@@ -159,14 +159,6 @@ const Menu = () => {
           <p className="text-xl text-white mb-8">
             Call us now for the ultimate explosive chicken experience!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:16123" className="btn-primary   hover:bg-gray-100">
-              Call 16123 Now
-            </a>
-            <button className="btn-secondary border-2 border-white text-white hover:bg-white ">
-              Order Online
-            </button>
-          </div>
         </div>
       </section>
     </>

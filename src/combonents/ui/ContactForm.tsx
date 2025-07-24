@@ -107,7 +107,7 @@ const ContactForm = () => {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className="w-full px-4 py-3 border  border-gray-300 rounded-lg focus:ring-2  focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent bg-transparent"
           >
             <option value="general">General Inquiry</option>
             <option value="reservation">Reservation</option>
