@@ -19,11 +19,11 @@ const products = [
 const title = "Best sellers";
 const ProductCarousel = () => {
   return (
-    <div className="justify-center items-center flex flex-col gap-4">
+    <div className="justify-center items-center flex flex-col gap-4 overflow-hidden">
       <h2 className="hidden md:block sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-yellow-primary text-center">
         {title}
       </h2>
-      <div className="relative w-full">
+      <div className="relative w-50 md:w-full">
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
