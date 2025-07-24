@@ -1,8 +1,8 @@
-import { User } from "lucide-react";
 import { Button } from "./../../combonents/ui/Button";
 import logo from "./../../assets/images/logo.png";
 import hotline from "./../../assets/images/hotline.png";
 import global from "./../../assets/images/coronavirus1.png";
+import profile from "./../../assets/images/user.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 const Header = () => {
@@ -21,11 +21,11 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 z-10"
+          className="md:hidden p-2 z-50 "
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg
-            className="w-6 h-6"
+            className="w-6 h-6 "
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ const Header = () => {
 
         {/* Navigation - Mobile */}
         {isMenuOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-background md:hidden">
+          <div className="absolute top-16 left-0 right-0 bg-background md:hidden shadow-amber-200 bg-gray-700 opacity-90 rounded-lg z-50 ">
             <div className="flex flex-col p-4 space-y-2">
               <Link to="/" className="p-2 hover:text-primary">
                 Home
@@ -84,20 +84,17 @@ const Header = () => {
           </div>
         )}
 
-        {/* Right side */}
         <div className="flex items-center space-x-4">
-          {/* Hotline */}
           <div className="hidden lg:flex items-center space-x-2 text-primary">
             <img className="w-30 h-10" src={hotline} alt="Hotline" />
           </div>
 
-          {/* Language and Profile */}
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="icon">
               <img src={global} alt="Global" />
             </Button>
             <Button variant="ghost" size="icon">
-              <User className="w-4 h-4 text-foreground" />
+              <img src={profile} alt="Profile" />
             </Button>
             <span className="text-sm text-foreground">عربى</span>
           </div>
