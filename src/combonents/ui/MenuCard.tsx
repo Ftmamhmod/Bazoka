@@ -3,7 +3,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 interface Dish {
   name: string;
   description: string;
-  price: number;
+  price: number | string;
   image: string;
   category: string;
   spicyLevel?: string;

@@ -3,17 +3,26 @@ import { Search, X } from "lucide-react";
 import MenuCard from "../../combonents/ui/MenuCard";
 import { menuData, categories } from "../../data/menuData";
 interface DishType {
-  id: number;
+  id: number | string;
   name: string;
   description: string;
-  price: number;
+  price: number | string;
   category: string;
   image: string;
+  spicyLevel?: string;
 }
+type MenuCategory =
+  | "all"
+  | "friedChicken"
+  | "sandwiches"
+  | "meals"
+  | "riceBowls"
+  | "sides"
+  | "appetizers";
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState<
-    string | "all" | keyof typeof menuData
-  >("all");
+  const [activeCategory, setActiveCategory] = useState<MenuCategory | "all">(
+    "all"
+  );
   const [searchTerm, setSearchTerm] = useState("");
 
   const getFilteredDishes = () => {
@@ -84,7 +93,7 @@ const Menu = () => {
             {categories.map((category) => (
               <button
                 key={category.id}
-                onClick={() => setActiveCategory(category.key)}
+                onClick={() => setActiveCategory(category.key as MenuCategory)}
                 className={`px-3 lg:px-6 py-3 rounded-full font-semibold text-xs md:text-xl transition-all duration-300 ${
                   activeCategory === category.key
                     ? " text-white shadow-lg"
