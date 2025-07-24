@@ -2,10 +2,17 @@ import { useState } from "react";
 import { Search, X } from "lucide-react";
 import MenuCard from "../../combonents/ui/MenuCard";
 import { menuData, categories } from "../../data/menuData";
-
+interface DishType {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  image: string;
+}
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState<
-    "all" | keyof typeof menuData
+    string | "all" | keyof typeof menuData
   >("all");
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -17,7 +24,7 @@ const Menu = () => {
 
     if (searchTerm.trim()) {
       dishes = dishes.filter(
-        (dish) =>
+        (dish: DishType) =>
           dish.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           dish.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
@@ -119,7 +126,7 @@ const Menu = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredDishes.map((dish: any) => (
+                {filteredDishes.map((dish: DishType) => (
                   <MenuCard key={dish.id} dish={dish} />
                 ))}
               </div>

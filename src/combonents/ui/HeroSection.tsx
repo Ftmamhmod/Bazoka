@@ -2,11 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Hero1 from "../../assets/images/171467158439066.jpg";
 import Hero2 from "../../assets/images/1714671691365642.jpg";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "./../../../node_modules/swiper/swiper.min.css";
+import "./../../../node_modules/swiper/swiper-bundle.min.css";
 
 const HeroSection = () => {
   return (

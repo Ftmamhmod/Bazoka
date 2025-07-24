@@ -6,10 +6,9 @@ import img3 from "../../assets/images/s-1748350339481110.jpg";
 import img4 from "../../assets/images/s_1753013659483730.jpg";
 import img5 from "../../assets/images/s-1748350792622885.jpg";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "./../../../node_modules/swiper/swiper.min.css";
+import "./../../../node_modules/swiper/swiper-bundle.min.css";
+
 const products = [
   { id: 1, images: img1, title: "Product 1" },
   { id: 2, images: img2, title: "Product 2" },
