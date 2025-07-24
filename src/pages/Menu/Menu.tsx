@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search, X } from "lucide-react";
 import MenuCard from "../../combonents/ui/MenuCard";
-import { menuData, categories } from "../../data/menuData";
+import { menuData, categories } from "../../data/data";
 interface DishType {
   id: number | string;
   name: string;
@@ -16,7 +16,6 @@ type MenuCategory =
   | "friedChicken"
   | "sandwiches"
   | "meals"
-  | "riceBowls"
   | "sides"
   | "appetizers";
 const Menu = () => {
