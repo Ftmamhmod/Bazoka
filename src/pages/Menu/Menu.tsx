@@ -46,7 +46,7 @@ const Menu = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-12 pr-12 py-3 lg:py-4 text-sm lg:text-lg  border-2 border-gray-200 rounded-full focus:outline-none 
-                focus:border-bazooka-orange focus:ring-2 focus:ring-bazooka-orange/20 transition-all duration-300"
+                 focus:ring-2  transition-all duration-300"
               />
               {searchTerm && (
                 <button

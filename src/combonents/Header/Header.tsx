@@ -65,6 +65,12 @@ const Header = () => {
           >
             <Link to="/about">About Us</Link>
           </Button>
+          <Button
+            variant="ghost"
+            className="text-foreground hover:text-primary flex items-center space-x-2"
+          >
+            <Link to="/contact">Contact Us</Link>
+          </Button>
         </nav>
 
         {/* Navigation - Mobile */}

@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About/About";
 import Menu from "./pages/Menu/Menu";
+import Contact from "./pages/Contact/Contact";
 
 export default App;
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
